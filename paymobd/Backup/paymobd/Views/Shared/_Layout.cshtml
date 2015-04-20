@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, user-scalable=1" />
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" media="Screen" />
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" media="handheld" />
+    <link href="../../Content/child_1.css" rel="stylesheet" type="text/css" media="Screen" />
+    <link href="../../Content/child_1.css" rel="stylesheet" type="text/css" media="handheld" />
+    @Styles.Render("~/Content/css", "~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="main">
+        @if (Request.IsAuthenticated)
+        { 
+            <div id="header1">
+                PayMoBD
+            </div>
+        
+            <div id="header2">
+                <table class="editor-small-header">
+                    <tr>
+                        <td class="hide-in-mobile">
+                            Hello, @User.Identity.Name
+                        </td>
+                        <td>
+                            <a class="hide-in-mobile">Your Wallet(BDT):</a> <a style="color: Red; font-weight: bold">@ViewBag.wallet_money</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.ActionLink("Change Password", "ChangePassword", "Account")
+                        </td>
+                        <td>
+                            @Html.ActionLink("Log Out", "LogOff", "Account")
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div id="header">
+                PayMoBD
+            </div>
+        }
+        @if (Request.IsAuthenticated)
+        {
+            if (User.IsInRole("aa1613"))
+            { 
+            <div id="menu">
+                <ul>
+                    <li>@Html.ActionLink("AllProfiles", "AllProfiles", "Home")</li>
+                    <li>@Html.ActionLink("Wallet Deposits", "Wallet_refill_history", "Home")</li>
+                    <li>@Html.ActionLink("My Refills", "mob_refill_history", "Home")</li>
+                    <li>@Html.ActionLink("Temp DB", "temp_db", "Home")</li>
+                    <li>@Html.ActionLink("Temp WalletDB", "temp_wallet", "Home")</li>
+                    <li>@Html.ActionLink("Pre-paid cards", "Index", "pre_card")</li>
+                </ul>
+            </div>
+            }
+            else
+            {
+        
+            <div id="menu">
+                <ul>
+                    <li>@Html.ActionLink("Wallet Deposits", "Wallet_refill_history", "Home")</li>
+                    <li>@Html.ActionLink("My Refills", "mob_refill_history", "Home")</li>
+                </ul>
+            </div>
+            }
+        }
+        <div id="main1">
+            <div id="site_body">
+                <div class="main_body">
+                    @RenderBody()
+                </div>
+                <div class="left_body">
+                    @RenderSection("left_body", false)
+                </div>
+                <div class="right_body">
+                    @RenderSection("right_body", false)
+                </div>
+            </div>
+            <div id="news">
+                @RenderSection("news", false)
+            </div>
+        </div>
+        <div class="hide-in-mobile" style="text-align:center; clear:both">
+            <img src="../../Content/GP.jpg" height="80;" width="80" />
+            <img src="../../Content/robi.jpg" height="80;" width="80" />
+            <img src="../../Content/BLink.png" height="80;" width="80" />
+            <img src="../../Content/teletalk.jpg" height="80;" width="80" />
+            <img src="../../Content/airtel.jpg" height="80;" width="80" />
+            <img src="../../Content/citycell.jpg" height="80;" width="80" />
+            <img src="../../Content/Qubee_Logo.jpg" height="80;" width="80" />
+            <img src="../../Content/banglalion.jpg" height="80;" width="80" />
+        </div>
+        <div id="footer" class="hide-in-mobile">
+            info@paymobd.com
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+</body>
+</html>

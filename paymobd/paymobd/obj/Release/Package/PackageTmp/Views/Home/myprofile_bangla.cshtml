@@ -1,0 +1,114 @@
+﻿@model paymobd.Models.UserProfile
+@{
+    ViewBag.Title = "myprofile";
+}
+@section left_body{
+    <div class="banner">
+        <p>
+            আপনার অ্যাকাউন্ট এ টাকা ভরুন
+        </p>
+    </div>
+    @Html.Action("wallet_refill_bangla", "Home")
+    <br />
+    <div class="banner">
+        <p>
+            আপনার অ্যাকাউন্ট এর টাকা দিয়ে মোবাইল রিফিল করুন 
+        </p>
+
+    </div>
+
+    @Html.Action("refill_by_wallet_bangla", "Home")
+
+}
+@section right_body{
+    <div class="banner">
+        <p>
+            সরাসরি মোবাইল রিফিল
+        </p>
+    </div>
+    @Html.Action("Instant_refill_bangla", "Home")
+    <br />
+    <div class="banner">
+        <p>
+            প্রি-পেইড কার্ড কিনুন
+        </p>
+
+    </div>
+
+    @Html.Action("buy_prepaid_cards_bangla", "pre_card")
+
+}
+
+@section bottom_body{
+
+    <iframe class="only-mobile"
+        src="//www.facebook.com/plugins/like.php?href=https://www.facebook.com/paymobd?ref=hl;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=tahoma&amp;height=21"
+        scrolling="no" frameborder="0" style="border: none; overflow: hidden; width: 40px; height: 39px"
+        allowtransparency="true"></iframe>
+    <div class="only-mobile">
+        @Html.ActionLink("English Site", "myprofile", "Home")
+
+    </div>
+    <p style="font: 12px Tahoma">
+        <a style="color: red">বিঃদ্রঃ</a> দয়া করে টাকা পাঠানোর পর PayPal পেজ বন্ধ করবেন না।
+        আমাদের সাইট এর লিংক ব্যবহার করে আমাদের সাইট এ ফিরে আসুন। তাতে আপনার টাকা দ্রুত পাঠানো হবে।
+    </p>
+}
+
+@section news
+{
+    <div>
+        @Html.ActionLink("English Site", "myprofile", "Home")
+
+    </div>
+    <div class="banner_colored">
+        PayMoBD Rates
+    </div>
+    <div>
+        @Ajax.ActionLink("Instant Refill Rates", "Instant_Refill_rates", "AjaxViews", new AjaxOptions
+{
+    UpdateTargetId = "section1",
+    LoadingElementId = "ajaxloader1",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "GET"
+})
+    </div>
+    <div>
+        @Ajax.ActionLink("Refill by wallet facilities", "Refill_by_wallet_rates", "AjaxViews", new AjaxOptions
+{
+    UpdateTargetId = "section1",
+    LoadingElementId = "ajaxloader1",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "GET"
+})
+    </div>
+    <div>
+        @Ajax.ActionLink("Wallet Deposit Rates", "wallet_refill_rates", "AjaxViews", new AjaxOptions
+{
+    UpdateTargetId = "section1",
+    LoadingElementId = "ajaxloader1",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "GET"
+})
+    </div>
+    <div>
+        @Html.ActionLink("Rate Comparison", "price_comparison", "AjaxViews")
+    </div>
+    <div>
+        @Html.ActionLink("100% money back", "money_back", "AjaxViews")
+    </div>
+
+    <br />
+    <div id="section1">
+    </div>
+    <br />
+    <div id="ajaxloader1">
+        <img src="../../Content/ajax-loader.gif" />
+    </div>
+    <div>
+        <img src="../../Content/paypal.jpg" height="120" width="150" />
+    </div>
+    <div>
+        <img src="../../Content/money_back.jpg" height="120" width="150" />
+    </div>
+}

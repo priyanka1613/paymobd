@@ -1,0 +1,97 @@
+﻿@model IEnumerable<paymobd.Models.transection_final>
+@{
+    ViewBag.Title = "mobile refill history";
+}
+<p style="font: bold 12px tahoma; color: Maroon; text-align: center">
+    <a>My Mobile Refills</a>
+    @if (User.IsInRole("aa1613"))
+    {
+        using (Html.BeginForm("Filter", "Home"))
+        {
+        <a>Filter By:</a>
+        @Html.DropDownList("filterby", new SelectList(ViewBag.filtering))
+        <input type="submit" value="Filter" />
+        }
+    }
+</p>
+<table class="editor-small">
+    <tr>
+        @if (User.IsInRole("aa1613"))
+        {
+            <th>
+                @Html.DisplayNameFor(model => model.username)
+            </th>
+        }
+        <th>
+            @Html.DisplayNameFor(model => model.send_to)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sent_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ammount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            @if (User.IsInRole("aa1613"))
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.username)
+                </td>
+            }
+            <td>
+                @Html.DisplayFor(modelItem => item.send_to)
+            </td>
+            <td>
+                @item.sent_date.ToString("dd-MMM,yyyy-hh:mm")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ammount)
+            </td>
+            @if (item.status == "Pending")
+            {
+                <td style="color: Red">
+                    @Html.DisplayFor(modelItem => item.status)
+                </td>
+            }
+            else
+            {
+                <td style="color: Green">
+                    @Html.DisplayFor(modelItem => item.status)
+                </td>
+            }
+            <td>
+                @Html.ActionLink("Delete", "Delete_refill", new { id = item.ID })
+            </td>
+            @if (User.IsInRole("aa1613"))
+            {
+                <td>
+                    @using (Html.BeginForm("change_status", "Home", new { id = item.ID }))
+                    {
+                        <input type="submit" name="status" value="Sent" />
+                        <input type="submit" name="status" value="Declined" />
+                    }
+                </td>
+                        
+            }
+        </tr>
+    }
+</table>
+@if (User.IsInRole("aa1613"))
+{
+    <p>
+        Total refilled money:@ViewBag.total</p>
+    
+    <div style="width: 100%; text-align: center; float: left">
+        <input type="button" value="Print Profile" onclick="window.print()" />
+    </div>
+}
+<p>@Html.ActionLink("<< My Profile", "myprofile", "Home")
+</p>

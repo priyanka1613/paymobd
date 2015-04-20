@@ -1,0 +1,183 @@
+﻿@{
+    ViewBag.Title = "price_comparison";
+}
+<p>
+    Mobile refill price comparison among some widely used online mobile refill companies:
+</p>
+<table class="editor">
+    <tr>
+        <th></th>
+        <th style="color: Maroon">PayMoBD
+        </th>
+        <th>mobilerefillbd
+        </th>
+        <th>bdonlinetopup
+        </th>
+        <th>upoharbd
+        </th>
+        <th>rechargetobd
+        </th>
+        <th>cellflexi
+        </th>
+        <th>worldremit
+        </th>
+    </tr>
+    <tr>
+        <th>BDT 100
+        </th>
+        <td style="color: Maroon">$2.20
+        </td>
+        <td>---
+        </td>
+        <td>$3.85
+        </td>
+        <td>---
+
+        </td>
+        <td>$2.87
+        </td>
+        <td>---
+        </td>
+        <td>$2.35
+        </td>
+    </tr>
+    <tr>
+        <th>BDT 200
+        </th>
+        <td style="color: Maroon">$3.60
+        </td>
+        <td>---
+        </td>
+        <td>$6.18
+        </td>
+        <td>---
+        </td>
+        <td>$4.00
+        </td>
+        <td>$4.00
+        </td>
+        <td>$4.10
+        </td>
+    </tr>
+    <tr>
+        <th>BDT 300
+        </th>
+        <td style="color: Maroon">$5.00
+        </td>
+        <td>$5.00
+        </td>
+        <td>$7.73
+        </td>
+        <td>---
+        </td>
+        <td>$5.88
+        </td>
+        <td>$6.00
+        </td>
+        <td>$6.15
+        </td>
+    </tr>
+    <tr>
+        <th>BDT 400
+        </th>
+        <td style="color: Maroon">$6.67
+        </td>
+        <td>---
+        </td>
+        <td>---
+        </td>
+        <td>---
+        </td>
+        <td>$7.40
+        </td>
+        <td>$8.00
+        </td>
+        <td>$8.20
+        </td>
+    </tr>
+    <tr>
+        <th>BDT 500
+        </th>
+        <td style="color: Maroon">$8.13
+        </td>
+        <td>$8.00
+        </td>
+        <td>$10.83
+        </td>
+        <td>$8.24
+        </td>
+        <td>$8.20
+        </td>
+        <td>$10.00
+        </td>
+        <td>$10.25
+        </td>
+    </tr>
+</table>
+
+@section news{
+    <div class="banner">
+        PayMoBD Rates
+    </div>
+    <div>
+        @Ajax.ActionLink("Instant Refill Rates", "Instant_Refill_rates", "AjaxViews", new AjaxOptions
+{
+    UpdateTargetId = "section1",
+    LoadingElementId = "ajaxloader1",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "GET"
+})
+    </div>
+    <div>
+        @Ajax.ActionLink("Refill by wallet facilities", "Refill_by_wallet_rates", "AjaxViews", new AjaxOptions
+{
+    UpdateTargetId = "section1",
+    LoadingElementId = "ajaxloader1",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "GET"
+})
+    </div>
+    <div>
+        @Ajax.ActionLink("Wallet Deposit Rates", "wallet_refill_rates", "AjaxViews", new AjaxOptions
+{
+    UpdateTargetId = "section1",
+    LoadingElementId = "ajaxloader1",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "GET"
+})
+    </div>
+    <div>
+        @Html.ActionLink("Rate Comparison", "price_comparison", "AjaxViews")
+    </div>
+    <div>
+        @Html.ActionLink("100% money back", "money_back", "AjaxViews")
+    </div>
+    <br />
+    <div id="ajaxloader1">
+        <img src="../../Content/ajax-loader.gif" />
+    </div>
+    <div id="section1">
+    </div>
+    <div>
+        <img src="../../Content/paypal.jpg" height="120" width="150" />
+    </div>
+    <div>
+        <img src="../../Content/money_back.jpg" height="120" width="150" />
+    </div>
+}
+<p style="color: Red">
+    * All prices are inclusive of VAT and Taxes.
+</p>
+
+@if (Request.IsAuthenticated)
+{
+    <p>
+        @Html.ActionLink("<< My Profile", "myprofile", "Home")
+    </p>
+}
+else
+{ 
+    <p>
+        @Html.ActionLink("<< Go Back", "Index", "Home")
+    </p>
+}

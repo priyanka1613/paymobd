@@ -1,0 +1,126 @@
+﻿@{
+    ViewBag.Title = "paymobd";
+}
+
+<meta name="google-site-verification" content="jmHCtEWJ2IUEo3Ue7MEKe7odMarCMea4HIdYgT5QS-s" />
+    
+<meta name="description" itemprop="Description" content="Recharge, refill, topup Bangladeshi Mobile phone from anywhere of the world, buy banglalion and quebee cards,
+         faster and reliable service. Secure and faster payments with Paypal" />
+    <meta name="keywords" itemprop="keywords" content="recharge bangladeshi mobile, top up mobile online,
+     bangladeshi mobile top up, bangladeshi mobile recharge, online top up, top up online,
+     grameen phone recharge, grameen phone top up, flexi load, 
+    banglalink recharge, i top up, citycell mobile top up, 
+    airtel mobile recharge, robi recharge, easy load, 
+    send money to bd mobile, bangladeshi operator recharge, 
+    grameen mobile, flexi mobile,
+    buy bangladeshi internet pre-paid card, buy banglalion card, 
+        buy quebee pre-paid card,buy quebee card,buy banglalion pre-paid card" />
+
+<div itemscope itemtype="http://schema.org/LocalBusiness">
+    
+    <p class="hide-in-mobile">
+        <a style="color: maroon; font-weight: bold" itemprop="name">PayMoBD</a> is the cheapest and easiest way to 
+        <a style="color: chocolate" itemprop="name">recharge bangladeshi pre-paid mobiles</a> and buy <a style="color: chocolate" itemprop="name">BanglaLion</a>
+        and <a style="color: chocolate" itemprop="name">QUbee</a> internet pre-paid
+    cards. Please choose an option below and submit your order. Our service is 100% secured, guranteed and fastest. 
+    </p>
+
+</div>
+@section left_body{
+    <div class="banner">
+        <p>
+            Instant Mobile Refill
+        </p>
+    </div>
+    @Html.Action("Instant_refill", "Home")
+    <p style="font: 12px Tahoma; color: #333">
+        You can send money instantly by using above form. <a style="font: 12px Tahoma; color: Red">No Registration required.</a>
+    </p>
+}
+@section right_body{
+    <div class="banner">
+        <p>
+            Please Login below or
+            @Ajax.ActionLink("Register Here", "Register", "Account", new AjaxOptions
+       {
+
+           UpdateTargetId = "right_body_data",
+           InsertionMode = InsertionMode.Replace,
+           HttpMethod = "GET"
+       })
+        </p>
+    </div>
+    <div id="right_body_data">
+        @Html.Action("Login", "Account")
+    </div>
+}
+
+@section bottom_body{
+    <iframe class="only-mobile"
+        src="//www.facebook.com/plugins/like.php?href=https://www.facebook.com/paymobd?ref=hl;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=tahoma&amp;height=21"
+        scrolling="no" frameborder="0" style="border: none; overflow: hidden; width: 40px; height: 39px"
+        allowtransparency="true"></iframe>
+    <div class="only-mobile">
+        @Html.ActionLink("বাংলা সাইট", "Index_bangla", "Home")
+    </div>
+    <p style="font: 12px Tahoma">
+        <a style="color: red">P.S:</a> Please don't close the pay-pal payment page after complition of your order.
+     Instead use the link to return back to our site. It will make your order delivered faster.
+    </p>
+}
+
+@section news{
+    <div>
+        @Html.ActionLink("বাংলা সাইট", "Index_bangla", "Home")
+    </div>
+
+    <div class="banner_colored">
+        PayMoBD Rates
+    </div>
+    <div>
+        @Ajax.ActionLink("Instant Refill Rates", "Instant_Refill_rates", "AjaxViews", new AjaxOptions
+{
+    UpdateTargetId = "section1",
+    LoadingElementId = "ajaxloader1",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "GET"
+})
+    </div>
+    <div>
+        @Ajax.ActionLink("Refill by wallet facilities", "Refill_by_wallet_rates", "AjaxViews", new AjaxOptions
+{
+    UpdateTargetId = "section1",
+    LoadingElementId = "ajaxloader1",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "GET"
+})
+    </div>
+    <div>
+        @Ajax.ActionLink("Wallet Deposit Rates", "wallet_refill_rates", "AjaxViews", new AjaxOptions
+{
+    UpdateTargetId = "section1",
+    LoadingElementId = "ajaxloader1",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "GET"
+})
+    </div>
+    <div>
+        @Html.ActionLink("Rate Comparison", "price_comparison", "AjaxViews")
+    </div>
+    <div>
+        @Html.ActionLink("100% money back", "money_back", "AjaxViews")
+    </div>
+    
+    <br />
+    <div id="ajaxloader1">
+        <img src="../../Content/ajax-loader.gif" />
+    </div>
+    <div id="section1">
+    </div>
+    <div>
+        <img src="../../Content/paypal.jpg" height="120" width="150" />
+    </div>
+    <div>
+        <img src="../../Content/money_back.jpg" height="120" width="150" />
+    </div>
+}

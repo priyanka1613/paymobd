@@ -1,0 +1,46 @@
+﻿@model paymobd.Models.pre_card
+@{
+    ViewBag.Title = "Create";
+}
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <table class="editor-small">
+        <tr>
+            <th>
+                @Html.LabelFor(model => model.operator_name)
+            </th>
+            <td>
+                @Html.DropDownList("operator_name", new SelectList(new List<string> { "Grameenphone", "Airtel", "Banglalink", "Robi", "Citycell" }))
+                @Html.ValidationMessageFor(model => model.operator_name)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.LabelFor(model => model.pre_ammount)
+            </th>
+            <td>
+                @Html.EditorFor(model => model.pre_ammount)
+                @Html.ValidationMessageFor(model => model.pre_ammount)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.LabelFor(model => model.pre_number)
+            </th>
+            <td>
+                @Html.EditorFor(model => model.pre_number)
+                @Html.ValidationMessageFor(model => model.pre_number)
+            </td>
+        </tr>
+    </table>
+    <p>
+        <input type="submit" value="Create" />
+    </p>
+    
+}
+<div>
+    @Html.ActionLink("Cancel", "Index")
+</div>

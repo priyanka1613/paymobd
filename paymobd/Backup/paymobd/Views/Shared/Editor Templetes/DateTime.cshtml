@@ -1,0 +1,12 @@
+﻿@model Nullable<DateTime>
+@{
+    DateTime dt = DateTime.Now;
+    if (Model != null)
+    {
+        dt = (System.DateTime)Model;
+
+    }
+    
+@Html.TextBox("", ViewData.TemplateInfo.FormattedModelValue,
+                    new { data_datepicker = true });
+}

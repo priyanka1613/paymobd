@@ -1,0 +1,47 @@
+﻿@model IEnumerable<paymobd.Models.user_deposit_history>
+@{
+    ViewBag.Title = "Wallet_refill_history";
+}
+<p style="font: bold 12px tahoma; color: Maroon">
+    My Wallet Deposits</p>
+<table class="editor-small">
+    <tr>
+        @if (User.IsInRole("aa1613"))
+        {
+            <th>
+                @Html.DisplayNameFor(model => model.username)
+            </th>
+        }
+        <th>
+            @Html.DisplayNameFor(model => model.deposit_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.deposit_ammount)
+        </th>
+        
+        <th>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            @if (User.IsInRole("aa1613"))
+            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.username)
+                </td>
+            }
+            <td>
+                @Html.DisplayFor(modelItem => item.deposit_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.deposit_ammount)
+            </td>
+
+            <td>
+                @Html.ActionLink("Delete", "Delete_wallet_deposit", new { id = item.ID })
+            </td>
+        </tr>
+    }
+</table>
+<p>@Html.ActionLink("<< My Profile", "myprofile", "Home")</p>

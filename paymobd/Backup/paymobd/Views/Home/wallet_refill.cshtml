@@ -1,0 +1,36 @@
+﻿@model paymobd.Models.Transection
+<script src="@Url.Content("~/Scripts/jquery-1.6.2.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+@using (Html.BeginForm("wallet_refill", "Home"))
+{
+    @Html.ValidationSummary(true)
+    
+    <input type="text" name="username" value="@Model.username" hidden="hidden"/>
+    <input type="text" name="mo_number" value="@Model.mo_number" hidden="hidden"/>
+    <input type="text" name="ConfirmNumber" value="@Model.ConfirmNumber" hidden="hidden"/>
+    <input type="text" name="transection_date" value="@Model.transection_date" hidden="hidden" />
+    
+    <table class="editor">
+        <tr>
+            <th>
+                @Html.Label("Amount(BDT):")
+            </th>
+            <td>
+                @Html.DropDownListFor(model => model.transection_ammount, new SelectList(ViewBag.ammount))
+            </td>
+            <td>
+                @Html.ValidationMessageFor(model => model.transection_ammount)
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <input type="submit" value="Refill Wallet" />
+            </td>
+            <td>
+            </td>
+        </tr>
+    </table>
+}

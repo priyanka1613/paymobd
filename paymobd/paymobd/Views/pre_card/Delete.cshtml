@@ -1,0 +1,39 @@
+﻿@model paymobd.Models.pre_card
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>pre_card</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.operator_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.operator_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.pre_ammount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pre_ammount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.pre_number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pre_number)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

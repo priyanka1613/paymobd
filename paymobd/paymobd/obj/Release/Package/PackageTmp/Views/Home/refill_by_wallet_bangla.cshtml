@@ -1,0 +1,63 @@
+﻿@model paymobd.Models.Transection
+
+<script src="@Url.Content("~/Scripts/jquery-1.6.2.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+
+<div id="order_confirm">
+    @using (Html.BeginForm("refill_by_wallet_bangla", "Home"))
+    {    
+        @Html.ValidationSummary(true)
+        <input type="hidden" name="username" value="@User.Identity.Name" hidden="hidden"/>
+        <input type="hidden" name="transection_date" value="@DateTime.Now" hidden="hidden" />
+        <table class="editor">
+            <tr>
+                <th>
+                    @Html.Label("মোবাইল নাম্বার:")
+                </th>
+                <td>+88 @Html.EditorFor(model => model.mo_number)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.mo_number)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.Label("আবার মোবাইল নাম্বার:")
+                </th>
+                <td>+88 @Html.EditorFor(model => model.ConfirmNumber)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.ConfirmNumber)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.Label("পরিমান(টাকা):")
+                </th>
+                <td>
+                    @Html.DropDownListFor(model => model.transection_ammount, new SelectList(ViewBag.ammount))
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.transection_ammount)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                @if (ViewBag.wallet_money >= 200)
+                {
+                    <td>
+                        <input type="submit" value="রিফিল করুন" />
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <a style="color: #463b3b">কমপক্ষে  <a style="color: red">200 টাকা</a> অ্যাকাউন্ট এ থাকতে হবে</a>
+                    </td>
+                }
+                <td></td>
+            </tr>
+        </table>
+    }
+</div>

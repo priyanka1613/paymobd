@@ -1,0 +1,26 @@
+﻿@using (Ajax.BeginForm("buy_prepaid_cards_bangla", "pre_card", new AjaxOptions
+{
+    UpdateTargetId = "new1",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "POST"
+}))
+{
+    <div>
+        আপনার অপেরটর:
+        @Html.DropDownList("operator_name", new SelectList(ViewBag.operators))
+    </div>
+    <div>
+        পরিমান (টাকা): 400
+    </div>
+    <div id="new1">
+        @if (ViewBag.wallet_money >= 400)
+        {
+            <input type="submit" value="কার্ড নাম্বার চাই" />
+        }
+        else
+        {
+            <a style="color: #463b3b">কার্ড কিনতে কমপক্ষে  <a style="color: red">400 টাকা</a> 
+                আপনার অ্যাকাউন্ট এ থাকতে হবে</a>
+        }
+    </div>
+}

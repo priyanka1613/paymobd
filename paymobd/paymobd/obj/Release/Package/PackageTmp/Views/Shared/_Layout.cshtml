@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head itemscope itemtype="http://schema.org/LocalBusiness">
+    <meta charset="utf-8" />
+    <meta name="google-site-verification" content="jmHCtEWJ2IUEo3Ue7MEKe7odMarCMea4HIdYgT5QS-s" />
+    <meta name="msvalidate.01" content="845417CD308513051CF8170D3D48E39B" />
+    <link rel="shortcut icon" href="~/Content/bangladeshi mobile recharge.ico" type="image/ico" />
+    <title itemprop="name">bangladeshi mobile recharge</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=1" />
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" media="Screen" />
+    <link href="../../Content/Site.css" rel="stylesheet" type="text/css" media="handheld" />
+    <link href="../../Content/child_1.css" rel="stylesheet" type="text/css" media="Screen" />
+    <link href="../../Content/child_1.css" rel="stylesheet" type="text/css" media="handheld" />
+
+
+
+    <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-45652109-1', 'paymobd.com');
+        ga('send', 'pageview');
+    </script>
+    @Styles.Render("~/Content/css", "~/Content/themes/base/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="main" class="bangladeshi mobile recharge">
+        @if (Request.IsAuthenticated)
+        { 
+            <div id="header2" class="hide-in-mobile">
+                <a href="~/Home/myprofile">
+                    <img src="~/Content/paymobd.jpg" height="79" width="120" alt="bangladshi mobile recharge" />
+                </a>
+            </div>
+            <div id="header1" class="hide-in-mobile">
+                <br />
+                PayMoBD
+                
+            </div>
+            <div id="header1" class="only-mobile" style="height: 34px">
+                <a class="only-mobile" style="font: bold 12px arial">PayMoBD
+                </a>
+
+            </div>
+        
+            <div id="header3" class="bangladeshi mobile refill">
+                <table class="editor-small-header">
+                    <tr>
+                        <td class="hide-in-mobile">Hello, @User.Identity.Name
+                        </td>
+                        <td>
+                            <a>Wallet(BDT):</a> <a style="color: Red; font-weight: bold">@ViewBag.wallet_money</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="hide-in-mobile">
+                            @Html.ActionLink("Change Password", "ChangePassword", "Account")
+                        </td>
+                        <td>
+                            @Html.ActionLink("Log Out", "LogOff", "Account")
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div id="header" class="bangladeshi mobile recharge">
+                <a class="hide-in-mobile">
+                    <img src="~/Content/paymobd.jpg" height="79" width="120" />
+                    PayMoBD
+                </a>
+                <a class="only-mobile">
+                    <img src="~/Content/paymobd.jpg" height="39" width="50" />
+                    PayMoBD
+                </a>
+            </div>
+        }
+        @if (Request.IsAuthenticated)
+        {
+            if (User.IsInRole("aa1613"))
+            { 
+            <div id="menu" class="bangladesh mobile recharge">
+                <ul>
+                    <li>@Html.ActionLink("AllProfiles", "AllProfiles", "Home")</li>
+                    <li>@Html.ActionLink("Wallet Deposits", "Wallet_refill_history", "Home")</li>
+                    <li>@Html.ActionLink("My Refills", "mob_refill_history", "Home")</li>
+                    <li>@Html.ActionLink("Temp DB", "temp_db", "Home")</li>
+                    <li>@Html.ActionLink("Temp WalletDB", "temp_wallet", "Home")</li>
+                    <li>@Html.ActionLink("Pre-paid cards", "Index", "pre_card")</li>
+                    <li>@Html.ActionLink("Message", "message", "Home")</li>
+                    <li>@Html.ActionLink("myIP", "ip", "Home")</li>
+                    <li><a href="http://mail.paymobd.com/squirrelmail/src/webmail.php">Webmail</a></li>
+                </ul>
+            </div>
+            }
+            else
+            {
+        
+            <div id="menu">
+                <ul>
+                    <li>@Html.ActionLink("Wallet Deposits", "Wallet_refill_history", "Home")</li>
+                    <li>@Html.ActionLink("My Refills", "mob_refill_history", "Home")</li>
+                </ul>
+            </div>
+            }
+        }
+        <div id="main1">
+            <div id="site_body">
+                <div class="main_body">
+                    @RenderBody()
+                </div>
+                <div class="left_body">
+                    @RenderSection("left_body", false)
+                </div>
+                <div class="right_body">
+                    @RenderSection("right_body", false)
+                </div>
+                <div id="bottom_body" style="float: left; width: 100%; text-align: center">
+                    <div class="hide-in-mobile">
+                        <marquee>
+            <img src="../../Content/grameenphone.jpg" height="55" width="55" alt="bangladeshi mobile recharge" />
+            <img src="../../Content/robi.jpg" height="55" width="55" alt="bangladeshi mobile refill" />
+            <img src="../../Content/banglalink.png" height="55" width="55" alt="bangladeshi mobile top-up" />
+            <img src="../../Content/teletalk.jpg" height="55" width="55"  alt="bangladeshi mobile recharge"/>
+            <img src="../../Content/airtel.jpg" height="55" width="55"  alt="bangladesh mobile recharge"/>
+            <img src="../../Content/citycell.jpg" height="55" width="55" alt="bangladesh mobile recharge" />
+            <img src="../../Content/Qubee.jpg" height="55" width="55" alt="bangladeshi mobile recharge" />
+            <img src="../../Content/banglalion.jpg" height="55" width="55" alt="bangladesh mobile refill" />
+                </marquee>
+                    </div>
+                    @RenderSection("bottom_body", false)
+
+                </div>
+            </div>
+
+            <div id="news">
+                <iframe src="//www.facebook.com/plugins/like.php?href=https://www.facebook.com/paymobd?ref=hl;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=tahoma&amp;height=21"
+                    scrolling="no" frameborder="0" style="border: none; overflow: hidden; width: 150px; height: 50px"
+                    allowtransparency="true"></iframe>
+                <div>
+                    <br />
+                    @Html.ActionLink("Help Center", "help_center", "Home")
+                </div>
+                @RenderSection("news", false)
+
+            </div>
+        </div>
+
+        <div id="footer" class="hide-in-mobile">
+            Contact: info@paymobd.com
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+</body>
+</html>

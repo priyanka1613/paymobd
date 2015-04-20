@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "message";
+}
+
+@using (Html.BeginForm("message", "Home")) { 
+
+@:subject: <input type="text" name="sub" value="" />
+<br />
+@:Message: <textarea name="mes" cols="50" rows="5"></textarea>
+<br />
+<input type="submit" value="Send" />
+}

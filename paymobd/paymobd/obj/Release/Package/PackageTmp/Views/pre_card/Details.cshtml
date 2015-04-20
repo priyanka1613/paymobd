@@ -1,0 +1,36 @@
+﻿@model paymobd.Models.pre_card
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>pre_card</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.operator_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.operator_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.pre_ammount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pre_ammount)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.pre_number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pre_number)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

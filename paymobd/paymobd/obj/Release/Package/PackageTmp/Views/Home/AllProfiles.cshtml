@@ -1,0 +1,71 @@
+﻿@model IEnumerable<paymobd.Models.UserProfile>
+
+@{
+    ViewBag.Title = "AllProfiles";
+}
+
+<h2>AllProfiles - total:@ViewBag.total</h2>
+<div style="text-align:center">
+@using (Ajax.BeginForm("search_profile", "Home", new AjaxOptions
+{
+    UpdateTargetId = "profile",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "POST"
+}))
+{ 
+    <input type="text" name="profile" />
+    <input type="submit" value="search by username" />
+}
+    </div>
+<div id="profile">
+
+</div>
+<table class="editor-small">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.e_mail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.join_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.wallet_money)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.e_mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.join_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.wallet_money)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit_profile", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "delete_user", new { u_name = item.username })
+            </td>
+        </tr>
+    }
+
+</table>
+<p>
+    @Html.ActionLink("Go Back", "myprofile", "Home")
+</p>

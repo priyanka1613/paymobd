@@ -1,0 +1,52 @@
+﻿@model paymobd.Models.pre_card
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>pre_card</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.operator_name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.operator_name)
+            @Html.ValidationMessageFor(model => model.operator_name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.pre_ammount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.pre_ammount)
+            @Html.ValidationMessageFor(model => model.pre_ammount)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.pre_number)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.pre_number)
+            @Html.ValidationMessageFor(model => model.pre_number)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

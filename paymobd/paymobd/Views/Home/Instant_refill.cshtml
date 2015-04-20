@@ -1,0 +1,62 @@
+﻿@model paymobd.Models.Transection
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+@using (Html.BeginForm("Instant_refill", "Home"))
+{
+    @Html.ValidationSummary(true, "Please provide valid informations")
+    if (Request.IsAuthenticated)
+    {
+    <input type="hidden" name="username" value="@User.Identity.Name" hidden="hidden"/>
+    <input type="hidden" name="transection_date" value="@DateTime.UtcNow" hidden="hidden" />
+    }
+    else
+    {     
+    <input type="hidden" name="username" value="UnknowN" hidden="hidden" />
+    <input type="hidden" name="transection_date" value="@DateTime.Now" hidden="hidden" />
+    }
+
+    <table class="editor">
+        <tr>
+            <th>
+                @Html.Label("Mobile Number :")
+            </th>
+            <td>
+                +88 @Html.EditorFor(model => model.mo_number)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(model => model.mo_number)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.Label("Confirm Number :")
+            </th>
+            <td>
+                +88 @Html.EditorFor(model => model.ConfirmNumber)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(model => model.ConfirmNumber)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.Label("Amount(BDT) :")
+            </th>
+            <td>
+                @Html.DropDownListFor(model => model.transection_ammount, new SelectList(ViewBag.ammount))
+            </td>
+            <td>
+                @Html.ValidationMessageFor(model => model.transection_ammount)
+            </td>
+        </tr>
+        <tr>
+            <td>
+            </td>
+            <td>
+                <input type="submit" value="Refill Now" />
+            </td>
+            <td>
+            </td>
+        </tr>
+    </table>
+}

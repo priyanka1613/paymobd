@@ -1,0 +1,41 @@
+﻿@model IEnumerable<paymobd.Models.wallet_deposit_temp>
+@{
+    ViewBag.Title = "temp_wallet";
+}
+<h2>
+    Temporary Wallet DB</h2>
+<table class="editor-small">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.deposit_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.deposit_ammount)
+        </th>
+        <th>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.deposit_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.deposit_ammount)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "temp_wallet_delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("<< My Profile", "myprofile", "Home")
+</p>

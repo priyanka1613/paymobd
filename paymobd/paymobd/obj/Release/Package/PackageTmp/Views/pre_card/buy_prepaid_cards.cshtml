@@ -1,0 +1,25 @@
+﻿@using (Ajax.BeginForm("buy_prepaid_cards", "pre_card", new AjaxOptions
+{
+    UpdateTargetId = "new1",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "POST"
+}))
+{
+    <div>
+        Choose Operator:
+        @Html.DropDownList("operator_name", new SelectList(ViewBag.operators))
+    </div>
+    <div>
+        Available Amount: BDT 400
+    </div>
+    <div id="new1">
+        @if (ViewBag.wallet_money >= 400)
+        {
+            <input type="submit" value="Buy Pre-paid Card" />
+        }
+        else
+        {
+            <a style="color: #463b3b">Minimum <a style="color: red">BDT 400</a> is needed for buying pre-paid cards. Please refill your wallet to buy Pre-paid cards.</a>
+        }
+    </div>
+}

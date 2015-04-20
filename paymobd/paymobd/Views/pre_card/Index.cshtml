@@ -1,0 +1,48 @@
+﻿@model IEnumerable<paymobd.Models.pre_card>
+@{
+    ViewBag.Title = "Index";
+}
+@Ajax.ActionLink("add new", "Create", "pre_card", new AjaxOptions
+{
+    UpdateTargetId = "new",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "GET"
+})
+<div id="new">
+</div>
+<table class="editor">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.operator_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pre_ammount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pre_number)
+        </th>
+        <th>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.operator_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pre_ammount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pre_number)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+</table>
+<p>
+@Html.ActionLink("<< My Profile","myprofile","Home")
+</p>

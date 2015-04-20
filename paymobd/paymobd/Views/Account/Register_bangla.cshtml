@@ -1,0 +1,68 @@
+﻿@model paymobd.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+<p class="message-info">
+     পাসওয়ার্ড কমপক্ষে ৬ আক্ষরের হতে হবে।
+</p>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+@using (Html.BeginForm("Register_bangla", "Account"))
+{
+    @Html.ValidationSummary(true, "দয়া করে অন্য ইউজার নাম / পাসওয়ার্ড ঠিক করুন।")
+
+    <table class="editor">
+        <tr>
+            <th>
+                @Html.Label("নাম:")
+            </th>
+            <td>
+                @Html.TextBoxFor(m => m.UserName)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(m => m.UserName)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.Label("ইমেইল:")
+            </th>
+            <td>
+                @Html.TextBoxFor(m => m.Email)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(m => m.Email)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.Label("পাসওয়ার্ড:")
+            </th>
+            <td>
+                @Html.PasswordFor(m => m.Password)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(m => m.Password)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.Label("পাসওয়ার্ড আবার:")
+            </th>
+            <td>
+                @Html.PasswordFor(m => m.ConfirmPassword)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+            </td>
+        </tr>
+        <tr>
+            <th>
+            </th>
+            <td>
+                <input type="submit" value="রেজিস্টার" />
+                @Html.ActionLink("বন্ধ", "Index_bangla", "Home")
+            </td>
+        </tr>
+    </table>
+}

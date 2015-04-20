@@ -1,0 +1,50 @@
+﻿@model paymobd.Models.LoginModel
+<script src="@Url.Content("~/Scripts/jquery-1.6.2.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+@using (Html.BeginForm("Login", "Account"))
+{
+    @Html.ValidationSummary(true)
+    <table class="editor">
+        <tr>
+            <th>
+                @Html.Label("UserName:")
+            </th>
+            <td>
+                @Html.EditorFor(model => model.UserName)
+            </td>
+            <td class="validation">
+                @Html.ValidationMessageFor(model => model.UserName)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.Label("Password:")
+            </th>
+            <td>
+                @Html.EditorFor(model => model.Password)
+            </td>
+            <td class="validation">
+                @Html.ValidationMessageFor(model => model.Password)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="hidden" name="RememberMe" value="true" />
+            </td>
+            <td>
+                <input type="submit" value="Login" />
+            </td>
+            <td class="hide-in-mobile">
+                @Html.ActionLink("Forget Password","password_retrival","Account")
+
+            </td>
+    </table>
+}
+<p style="font: 12px Tahoma; color:#333" class="hide-in-mobile">
+    Registered users can <a style="font: 12px Tahoma;color:Red">Track their transections</a>,
+    <a style="font: 12px Tahoma;color:Red">Use PayMoBD unique Wallet facility</a> and
+    <a style="font: 12px Tahoma;color:Red">Refill cheaply using wallet money</a>
+    and buy
+    <a style="font: 12px Tahoma;color:Red">BanglaLion and QUbee</a> pre-paid cards.
+</p>

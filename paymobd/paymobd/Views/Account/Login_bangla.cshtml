@@ -1,0 +1,46 @@
+﻿@model paymobd.Models.LoginModel
+<script src="@Url.Content("~/Scripts/jquery-1.6.2.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+@using (Html.BeginForm("Login_bangla", "Account"))
+{
+    @Html.ValidationSummary(true)
+    <table class="editor">
+        <tr>
+            <th>
+                @Html.Label("নামঃ")
+            </th>
+            <td>
+                @Html.EditorFor(model => model.UserName)
+            </td>
+            <td class="validation">
+                @Html.ValidationMessageFor(model => model.UserName)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.Label("পাসওয়ার্ড:")
+            </th>
+            <td>
+                @Html.EditorFor(model => model.Password)
+            </td>
+            <td class="validation">
+                @Html.ValidationMessageFor(model => model.Password)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="hidden" name="RememberMe" value="true" />
+            </td>
+            <td>
+                <input type="submit" value="লগইন" />
+            </td>
+    </table>
+}
+<p style="font: 12px Tahoma; color:#333">
+    রেজিস্টার করলে আপনি <a style="font: 12px Tahoma;color:Red">আপনার হিস্ট্রি দেখতে পারবেন</a>,
+    <a style="font: 12px Tahoma;color:Red">প্রি-পেইদ কার্ড কিনতে পারবেন </a> এবং
+    <a style="font: 12px Tahoma;color:Red">কম দামে টাকা ভরতে পাড়বেন</a>
+ এবং 
+    <a style="font: 12px Tahoma;color:Red">বাংলালায়ন ও কিউবি </a>  কার্ড কিনতে পারবেন
+</p>

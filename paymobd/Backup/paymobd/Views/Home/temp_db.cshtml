@@ -1,0 +1,53 @@
+﻿@model IEnumerable<paymobd.Models.User_refill_history>
+@{
+    ViewBag.Title = "temp_db";
+}
+<h2>
+    Temporary Database</h2>
+<table class="editor-small">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.send_to)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sent_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ammount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.send_to)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sent_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ammount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "temp_delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("<< My Profile", "myprofile", "Home")
+</p>

@@ -1,0 +1,527 @@
+﻿.banner
+{
+    width: 98%;
+    padding: 1%;
+    background-color: #f5e858;
+    font: Bold 12px Tahoma;
+    color: Maroon;
+}
+.banner_colored
+{
+    width: 98%;
+    padding: 1%;
+    background-color: #AAA;
+    font: Bold 14px Tahoma;
+    color: #900;
+}
+table.editor
+{
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 98%;
+    padding: 1%;
+    background-color: White;
+}
+table.editor th
+{
+    background-color: #dddddd;
+}
+table.editor-small
+{
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding: 1%;
+    background-color: White;
+}
+table.editor-small th
+{
+    background-color: #dddddd;
+}
+table.editor-small td
+{
+    background-color: #dddddd;
+    font: Bold 10px Sans-serif;
+}
+table.editor-small tr:nth-child(even)
+{
+    background-color: #ffffff;
+}
+table.editor-small-header
+{
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding: 1%;
+    background-color: #AADDDD;
+}
+table.editor-small-header td
+{
+    background-color: #AADDDD;
+    font: Bold 10px Sans-serif;
+}
+table.table-colored
+{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 99%;
+    background-color: White;
+}
+table.table-colored th
+{
+    background-color: #AAAAAA;
+    font: Bold 10px Tahoma;
+}
+table.table-colored td
+{
+    background-color: #dddddd;
+    font: 12px Tahoma;
+}
+#ajaxloader1
+{
+    display: none;
+}
+#ajaxloader2
+{
+    display: none;
+}
+
+
+/********************
+*   Mobile Styles   *
+********************/
+@media only screen and (max-width: 500px)
+{
+    .banner
+    {
+        width: 100%;
+        background-color: #eeeeee;
+        font: 12px Tahoma;
+        color: Maroon;
+        text-align: center;
+        padding: 0;
+    }
+    .banner-colored
+    {
+        width: 100%;
+        background-color: #DDD;
+        font: 12px Tahoma;
+        font-style: italic;
+        color: #900;
+    }
+    table.editor
+    {
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        background-color: White;
+    }
+    table.editor th
+    {
+        background-color: #dddddd;
+        font: Bold 8px Sans-serif;
+    }
+    table.editor td
+    {
+        font: 8px Sans-serif;
+    }
+    table.editor-small
+    {
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        background-color: White;
+    }
+    table.editor-small th
+    {
+        background-color: #dddddd;
+        font: Bold 8px Sans-serif;
+    }
+    table.editor-small td
+    {
+        background-color: #dddddd;
+        font: 8px Sans-serif;
+    }
+    table.editor-small tr:nth-child(even)
+    {
+        background-color: #ffffff;
+    }
+    table.table-colored
+    {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        background-color: White;
+    }
+    table.table-colored th
+    {
+        background-color: #AAAAAA;
+        font: Bold 8px Tahoma;
+    }
+    table.table-colored td
+    {
+        background-color: #dddddd;
+        font: 8px Tahoma;
+    }
+    #ajaxloader1
+    {
+        display: none;
+    }
+    #ajaxloader2
+    {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px)
+{
+    .banner
+    {
+        width: 100%;
+        background-color: #eeeeee;
+        font: 12px Tahoma;
+        color: Maroon;
+        text-align: center;
+        padding: 0;
+    }
+    .banner-colored
+    {
+        width: 100%;
+        background-color: #DDD;
+        font: 12px Tahoma;
+        font-style: italic;
+        color: #900;
+    }
+    table.editor
+    {
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        background-color: White;
+    }
+    table.editor th
+    {
+        background-color: #dddddd;
+        font: Bold 8px Sans-serif;
+    }
+    table.editor td
+    {
+        font: 8px Sans-serif;
+    }
+    table.editor-small
+    {
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        background-color: White;
+    }
+    table.editor-small th
+    {
+        background-color: #dddddd;
+        font: Bold 8px Sans-serif;
+    }
+    table.editor-small td
+    {
+        background-color: #dddddd;
+        font: 8px Sans-serif;
+    }
+    table.editor-small tr:nth-child(even)
+    {
+        background-color: #ffffff;
+    }
+    table.table-colored
+    {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        background-color: White;
+    }
+    table.table-colored th
+    {
+        background-color: #AAAAAA;
+        font: Bold 8px Tahoma;
+    }
+    table.table-colored td
+    {
+        background-color: #dddddd;
+        font: 8px Tahoma;
+    }
+    #ajaxloader1
+    {
+        display: none;
+    }
+    #ajaxloader2
+    {
+        display: none;
+    }
+
+}
+@media only screen and (max-width: 480px)
+{
+    .banner
+    {
+        width: 100%;
+        background-color: #eeeeee;
+        font: 12px Tahoma;
+        color: Maroon;
+        text-align: center;
+        padding: 0;
+    }
+    .banner-colored
+    {
+        width: 100%;
+        background-color: #DDD;
+        font: 12px Tahoma;
+        font-style: italic;
+        color: #900;
+    }
+    table.editor
+    {
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        background-color: White;
+    }
+    table.editor th
+    {
+        background-color: #dddddd;
+        font: Bold 8px Sans-serif;
+    }
+    table.editor td
+    {
+        font: 8px Sans-serif;
+    }
+    table.editor-small
+    {
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        background-color: White;
+    }
+    table.editor-small th
+    {
+        background-color: #dddddd;
+        font: Bold 8px Sans-serif;
+    }
+    table.editor-small td
+    {
+        background-color: #dddddd;
+        font: 8px Sans-serif;
+    }
+    table.editor-small tr:nth-child(even)
+    {
+        background-color: #ffffff;
+    }
+    table.table-colored
+    {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        background-color: White;
+    }
+    table.table-colored th
+    {
+        background-color: #AAAAAA;
+        font: Bold 8px Tahoma;
+    }
+    table.table-colored td
+    {
+        background-color: #dddddd;
+        font: 8px Tahoma;
+    }
+    #ajaxloader1
+    {
+        display: none;
+    }
+    #ajaxloader2
+    {
+        display: none;
+    }
+
+}
+@media only screen and (max-width: 1098px)
+{
+    .banner
+    {
+        width: 100%;
+        background-color: #eeeeee;
+        font: 12px Tahoma;
+        color: Maroon;
+        text-align: center;
+        padding: 0;
+    }
+    .banner-colored
+    {
+        width: 100%;
+        background-color: #DDD;
+        font: 12px Tahoma;
+        font-style: italic;
+        color: #900;
+    }
+    table.editor
+    {
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        background-color: White;
+    }
+    table.editor th
+    {
+        background-color: #dddddd;
+        font: Bold 8px Sans-serif;
+    }
+    table.editor td
+    {
+        font: 8px Sans-serif;
+    }
+    table.editor-small
+    {
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        background-color: White;
+    }
+    table.editor-small th
+    {
+        background-color: #dddddd;
+        font: Bold 8px Sans-serif;
+    }
+    table.editor-small td
+    {
+        background-color: #dddddd;
+        font: 8px Sans-serif;
+    }
+    table.editor-small tr:nth-child(even)
+    {
+        background-color: #ffffff;
+    }
+    table.table-colored
+    {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        background-color: White;
+    }
+    table.table-colored th
+    {
+        background-color: #AAAAAA;
+        font: Bold 8px Tahoma;
+    }
+    table.table-colored td
+    {
+        background-color: #dddddd;
+        font: 8px Tahoma;
+    }
+    #ajaxloader1
+    {
+        display: none;
+    }
+    #ajaxloader2
+    {
+        display: none;
+    }
+
+}
+@media handheld
+{
+    .banner
+    {
+        width: 100%;
+        background-color: #eeeeee;
+        font: 12px Tahoma;
+        color: Maroon;
+        text-align: center;
+        padding: 0;
+    }
+    .banner-colored
+    {
+        width: 100%;
+        background-color: #DDD;
+        font: 12px Tahoma;
+        font-style: italic;
+        color: #900;
+    }
+    table.editor
+    {
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        background-color: White;
+    }
+    table.editor th
+    {
+        background-color: #dddddd;
+        font: Bold 8px Sans-serif;
+    }
+    table.editor td
+    {
+        font: 8px Sans-serif;
+    }
+    table.editor-small
+    {
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        background-color: White;
+    }
+    table.editor-small th
+    {
+        background-color: #dddddd;
+        font: Bold 8px Sans-serif;
+    }
+    table.editor-small td
+    {
+        background-color: #dddddd;
+        font: 8px Sans-serif;
+    }
+    table.editor-small tr:nth-child(even)
+    {
+        background-color: #ffffff;
+    }
+    table.table-colored
+    {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        background-color: White;
+    }
+    table.table-colored th
+    {
+        background-color: #AAAAAA;
+        font: Bold 8px Tahoma;
+    }
+    table.table-colored td
+    {
+        background-color: #dddddd;
+        font: 8px Tahoma;
+    }
+    #ajaxloader1
+    {
+        display: none;
+    }
+    #ajaxloader2
+    {
+        display: none;
+    }
+
+}

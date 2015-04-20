@@ -1,0 +1,84 @@
+﻿@model paymobd.Models.UserProfile
+@{
+    ViewBag.Title = "myprofile";
+}
+@section left_body{
+    <div class="banner">
+        <p>
+            Deposit in Wallet</p>
+    </div>
+    @Html.Action("wallet_refill", "Home")
+    <br />
+    <div class="banner">
+        <p>
+            Refill with Wallet Money</p>
+        <a style="color: RED; font: 12px Sans-Serif">
+            (Refill your wallet first to refill mobile by wallet money)</a>
+    </div>
+    @Html.Action("refill_by_wallet", "Home")
+}
+@section right_body{
+    <div class="banner">
+        <p>
+            Instant Refill</p>
+    </div>
+    @Html.Action("Instant_refill", "Home")
+    <br />
+    <div class="banner">
+        <p>
+            Buy Pre-paid cards</p>
+    </div>
+    @Html.Action("buy_prepaid_cards", "pre_card")
+}
+@section news
+{
+    <div class="banner_colored">
+        PayMoBD Rates
+    </div>
+    <div>
+        @Ajax.ActionLink("Instant Refill Rates", "Instant_Refill_rates", "AjaxViews", new AjaxOptions
+{
+    UpdateTargetId = "section1",
+    LoadingElementId = "ajaxloader1",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "GET"
+})
+    </div>
+    <div>
+        @Ajax.ActionLink("Refill by Wallet Rates", "Refill_by_wallet_rates", "AjaxViews", new AjaxOptions
+{
+    UpdateTargetId = "section1",
+    LoadingElementId = "ajaxloader1",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "GET"
+})
+    </div>
+    <div>
+        @Ajax.ActionLink("Wallet Refill Rates", "wallet_refill_rates", "AjaxViews", new AjaxOptions
+{
+    UpdateTargetId = "section1",
+    LoadingElementId = "ajaxloader1",
+    InsertionMode = InsertionMode.Replace,
+    HttpMethod = "GET"
+})
+    </div>
+    <div>
+        @Html.ActionLink("Rate Comparison", "price_comparison", "AjaxViews")
+    </div>
+    <div>
+        @Html.ActionLink("100% money back", "money_back", "AjaxViews")
+    </div>
+    <br />
+    <div id="section1">
+    </div>
+    <br />
+    <div id="ajaxloader1">
+        <img src="../../Content/ajax-loader.gif" />
+    </div>
+    <div>
+        <img src="../../Content/paypal.jpg" height="120" width="150" />
+    </div>
+    <div>
+        <img src="../../Content/money_back.jpg" height="120" width="150" />
+    </div>
+}

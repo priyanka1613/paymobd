@@ -1,0 +1,69 @@
+@model paymobd.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+<p class="message-info">
+    Passwords are required to be a minimum of @Membership.MinRequiredPasswordLength
+    characters in length.
+</p>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+@using (Html.BeginForm("Register", "Account"))
+{
+    @Html.ValidationSummary(true, "Username and/or e-mail address already in-use. Please choose a different one.")
+
+    <table class="editor">
+        <tr>
+            <th>
+                @Html.LabelFor(m => m.UserName)
+            </th>
+            <td>
+                @Html.TextBoxFor(m => m.UserName)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(m => m.UserName)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.LabelFor(m => m.Email)
+            </th>
+            <td>
+                @Html.TextBoxFor(m => m.Email)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(m => m.Email)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.LabelFor(m => m.Password)
+            </th>
+            <td>
+                @Html.PasswordFor(m => m.Password)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(m => m.Password)
+            </td>
+        </tr>
+        <tr>
+            <th>
+                @Html.Label("Confirm Password")
+            </th>
+            <td>
+                @Html.PasswordFor(m => m.ConfirmPassword)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+            </td>
+        </tr>
+        <tr>
+            <th>
+            </th>
+            <td>
+                <input type="submit" value="Register" />
+                @Html.ActionLink("Cancel", "Index", "Home")
+            </td>
+        </tr>
+    </table>
+}
